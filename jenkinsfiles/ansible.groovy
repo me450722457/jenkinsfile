@@ -8,14 +8,13 @@ def deploy = new org.devops.deploy()
 //pipeline
 pipeline{
     agent any
-    env.branchName = "master"
+    
     stages{
         stage("GetCode"){
             steps{
                 script{
                     println("GetCode")
-                    println("${branchName}")
-                    git 
+                    git 'https://github.com/me450722457/jenkinsfile.git'
                 }
             }
         }
