@@ -1,6 +1,6 @@
 #!groovy
 
-@Library('jenkinsfile@master') _
+@Library('jenkinsfile') _
 
 //func from shareibrary
 def deploy = new org.devops.deploy()
