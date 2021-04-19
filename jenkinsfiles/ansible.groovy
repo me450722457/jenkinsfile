@@ -13,6 +13,7 @@ pipeline{
         stage("GetCode"){
             steps{
                 script{
+                    sh 'rm -f *'
                     println("GetCode")
                     git 'https://github.com/me450722457/jenkinsfile.git'
                 }
@@ -22,7 +23,7 @@ pipeline{
             steps{
                 script{
                   deploy.Deploy
-                  ansiblePlaybook inventory: 'jenkinsfile/hosts', playbook: 'jenkinsfile/test.yml'
+                  ansiblePlaybook inventory: 'hosts', playbook: 'test.yml'
                 }
             }
        }
