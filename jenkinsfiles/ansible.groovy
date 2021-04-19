@@ -21,7 +21,7 @@ pipeline{
         stage("Deploy"){
             steps{
                 script{
-                  deploy.Deploy()
+                  deploy.Deploy
                   ansiblePlaybook inventory: 'jenkinsfile/hosts', playbook: 'jenkinsfile/test.yml'
                 }
             }
